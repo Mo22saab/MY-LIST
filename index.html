@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamMax Pro - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <!-- ===== شريط التنقل العلوي ===== -->
+   <nav class="main-nav" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">MYLIST</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="movies.html"><i class="fa-solid fa-film"></i> Movies</a></li>
+            <li><a href="series.html"><i class="fa-solid fa-tv"></i> Series</a></li>
+            <li><a href="#"><i class="fa-solid fa-clapperboard"></i> Openings</a></li>
+            <li><a href="#"><i class="fa-solid fa-music"></i> Music</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <button class="search-icon-btn" id="mobileSearchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <div class="desktop-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search content..." id="desktopSearchInput">
+            </div>
+
+            <div class="notification-wrapper">
+                <button class="nav-action-btn" id="notificationBtn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge" id="notificationBadge">3</span>
+                </button>
+                <div class="dropdown notification-dropdown" id="notificationDropdown">
+                    <div class="dropdown-header">
+                        <h3><i class="fa-solid fa-bell"></i> Notifications</h3>
+                        <button class="mark-read-btn" id="markReadBtn">Mark all as read</button>
+                    </div>
+                    <div class="notification-list" id="notificationList"></div>
+                </div>
+            </div>
+
+            <div class="profile-wrapper">
+                <img src="profail.jpg" alt="Profile" class="profile-img" id="profileBtn">
+                <div class="dropdown profile-dropdown" id="profileDropdown">
+                    <div class="profile-header">
+                        <img src="profail.jpg"Profile">
+                        <div class="profile-info">
+                            <h4>Mosaab Samat</h4>
+                            <p>Premium Member</p>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#"><i class="fa-solid fa-user"></i> My Profile</a>
+                        <a href="#"><i class="fa-solid fa-list"></i> My Watchlist</a>
+                        <a href="#"><i class="fa-solid fa-heart"></i> Favorites</a>
+                        <a href="#"><i class="fa-solid fa-clock"></i> Watch History</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+                        <a href="#"><i class="fa-solid fa-question-circle"></i> Help & Support</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-dropdown" id="searchDropdown">
+            <div class="search-dropdown-content">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search movies, series..." id="mobileSearchInput">
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== شريط التنقل السفلي للجوال ===== -->
+<nav class="mobile-bottom-nav">
+    <div class="mobile-nav-links">
+        <a href="home.html" class="mobile-nav-link active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="movies.html" class="mobile-nav-link">
+            <i class="fa-solid fa-film"></i>
+            <span>Movies</span>
+        </a>
+        <a href="series.html" class="mobile-nav-link">
+            <i class="fa-solid fa-tv"></i>
+            <span>Series</span>
+        </a>
+        <a href="#" class="mobile-nav-link">
+            <i class="fa-solid fa-clapperboard"></i>
+            <span>Openings</span>
+        </a>
+        <a href="#" class="mobile-nav-link">
+            <i class="fa-solid fa-music"></i>
+            <span>Music</span>
+        </a>
+    </div>
+</nav>
+
+
+    <!-- ===== القسم البطولي ===== -->
+    <section class="hero-section">
+        <div class="dark-overlay-bottom"></div>
+        
+        <div class="hero-content" id="heroContent">
+            <div id="content-area">
+                <div class="meta-group">
+                    <span class="rating-tag" id="rating"></span>
+                    <span class="rating-number" id="ratingNum">
+                        <i class="fab fa-imdb"></i> <span id="imdbRating"></span>
+                    </span>
+                    <span class="year" id="year"></span>
+                </div>
+                
+                <h1 class="hero-title" id="title"></h1>
+               
+                <p class="hero-description" id="desc"></p>
+
+                <div class="hero-btn-group">
+                    <a href="#" target="_blank" class="hero-btn hero-btn-primary" id="watchBtn">
+                        <span>▶</span> Watch Now
+                    </a>
+                    <button class="hero-btn hero-btn-secondary" id="infoBtn">
+                        <span>▶</span> TRAILLER
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container" id="sliderContainer">
+            <div class="vignette-overlay"></div>
+            <div class="slide-box" id="slideBox">
+                <!-- الصور ستتم إضافتها ديناميكياً بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== البوب أب الحديث ===== -->
+    <div class="modern-popup-overlay" id="modernPopup">
+        <div class="modern-popup-card" id="modernPopupContent">
+            <!-- المحتوى سيتم تحميله ديناميكياً -->
+        </div>
+    </div>
+
+    <!-- ===== القسم العلوي 5 - المعدل ===== -->
+    <section class="top5-section">
+        <div class="section-header">
+            <h2 class="section-title">TOP 5 <span id="current-platform">HBO MAX</span></h2>
+            
+            <!-- علامات التبويب المعدلة - خط واحد فقط -->
+            <div class="platform-tabs">
+                <button class="platform-tab-btn active" data-platform="hbo">
+                    <i class="fab fa-hbo"></i> HBO MAX
+                </button>
+                <button class="platform-tab-btn" data-platform="apple">
+                    <i class="fab fa-apple"></i> APPLE TV+
+                </button>
+                <button class="platform-tab-btn" data-platform="netflix">
+                    <i class="fab fa-netflix"></i> NETFLIX
+                </button>
+            </div>
+        </div>
+
+        <div class="top5-grid-container">
+            <div class="top5-grid" id="top5Grid">
+                <!-- بطاقات الـ 5 الأوائل ستتم تحميلها هنا بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== قسم موبي - المعدل ===== -->
+    <section class="mubi-section" id="mubiSection">
+        <div class="mubi-container">
+            <header class="mubi-header">
+                <h2 class="mubi-main-title">THIS IS ONE OF THE BEST SCENES FOR ME</h2>
+                <p class="mubi-subtitle">
+                    A collection of my favorite cinematic moments and visual masterpieces that have left a lasting impression.
+                </p>
+            </header>
+
+            <main class="mubi-grid" id="mubiGrid">
+                <!-- صور موبي ستتم تحميلها هنا بواسطة JavaScript -->
+            </main>
+        </div>
+    </section>
+
+    <!-- ===== قسم من نحن ===== -->
+    <section class="about-section">
+        <h1 class="animated-title">ABOUT THE PLATFORM</h1>
+        
+        <p class="description-text">
+            This is a personal platform that showcases what I watch,
+            including TV series, movies, and music. The ranking of
+            movies and series is based on my own personal taste.
+        </p>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4 class="footer-title">StreamMax Pro</h4>
+                <p class="footer-description">
+                    A personal platform to showcase what I watch including TV series, movies, and music
+                </p>
+                <div class="footer-social">
+                    <a href="https://whatsapp.com" target="_blank" class="social-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+           
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> contact@streammax.com</li>
+                    <li><i class="fas fa-phone"></i> +212 600 000 000</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Morocco</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2024 StreamMax Pro. All rights reserved. 
+                <span class="highlight">This is a personal platform</span>
+            </p>
+            <p class="disclaimer">
+                This website is for personal content display only and not for broadcasting or distribution.
+            </p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
